@@ -3,6 +3,17 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
     },
+    event = { "BufWritePre" },
+    keys = {
+        {
+          "<leader>f",
+          function()
+            require("conform").format({ async = true })
+          end,
+          mode = "",
+          desc = "Format buffer. (conform.nvim)"
+        },
+    },
     opts = {
         formatters_by_ft = {
             javascript = {
