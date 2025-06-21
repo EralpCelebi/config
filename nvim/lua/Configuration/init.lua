@@ -1,4 +1,5 @@
 require("Configuration.Options")
 require("Configuration.Packages")
+require("Configuration.Commands")
 require("Configuration.Palette")
 require("Configuration.Bindings")
