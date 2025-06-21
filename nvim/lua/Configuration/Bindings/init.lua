@@ -7,7 +7,7 @@ local cmd = vim.cmd
 local builtin = require('telescope.builtin')
 
 
-set('n', '<leader>n', function() vim.cmd("Neotree toggle") end, { desc = "Open file tree." })
+set('n', '<leader>n', function() vim.cmd("Oil") end, { desc = "Open file tree." })
 set('n', '<leader>FF', builtin.find_files, { desc = 'Telescope find files' })
 set('n', '<leader>FG', builtin.live_grep, { desc = 'Telescope live grep' })
 set('n', '<leader>FB', builtin.buffers, { desc = 'Telescope buffers' })
