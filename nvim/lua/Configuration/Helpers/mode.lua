@@ -4,6 +4,7 @@ local mode = {
     VISUAL = "v",
     VISUAL_LINE = "V",
     COMMAND_LINE = "c",
+    TERMINAL = "t",
     ALL = { "n", "i", "v" },
 }
 
@@ -13,6 +14,7 @@ local mode = {
 ---| "v"
 ---| "V"
 ---| "c"
+---| "t"
 ---@param ... string
 ---@return Mode | Mode[]
 function mode.UNKNOWN(...)
