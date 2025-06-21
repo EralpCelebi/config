@@ -20,6 +20,7 @@ set(mode.NORMAL, '<leader>gc', telescope.git_commits, { desc = "Get git commits.
 
 set(mode.NORMAL, '<leader>xx', function() vim.cmd("Trouble diagnostics toggle") end, { desc = "Diagnostics (trouble.nvim)" })
 set(mode.NORMAL, '<leader>xb', function() vim.cmd("Trouble diagnostics toggle filter.buf=0") end, { desc = "Buffer diagnostics (trouble.nvim)" })
+set(mode.NORMAL, '<leader>f', function() vim.cmd("Format") end, { desc = "Format buffer. (conform.nvim)" })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
