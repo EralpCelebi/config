@@ -1,11 +1,9 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 set -xa PATH ":/opt/homebrew/share/go/bin"
 set -xa PATH ":/opt/homebrew/opt/rustup/bin"
-set -xa PATH ":$HOME/.local/bin"
 
 set -x CARGO_HOME "$HOME/.local/share/cargo"
 set -x RUSTUP_HOME "$HOME/.local/share/rustup"
-set -x OLLAMA_MODELS "$HOME/.local/share/ollama/models"
 
 set -x PAGER "most"
 set -x EDITOR "nvim"

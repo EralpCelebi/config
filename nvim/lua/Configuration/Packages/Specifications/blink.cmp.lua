@@ -8,7 +8,7 @@ return {
   -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
   -- build = 'cargo build --release',
   -- If you use nix, you can build from source using latest nightly rust with:
-  -- build = 'nix run .#build-plugin',
+  -- build = 'nix run .#build-plugin',  
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
@@ -30,12 +30,10 @@ return {
         ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
         ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
        
-        ['<Up>'] = { 'select_prev', 'fallback' },
-        ['<Down>'] = { 'select_next', 'fallback' },
+        ['<Up>'] = { "select_prev", "fallback" },
+        ['<Down>'] =  { "select_next", "fallback" },
 
-        ['<S-Tab>'] = { "snippet_forward", "fallback" },
-        
-        ['<Tab>'] = { "select_and_accept", "fallback" },
+        ['<Tab>'] = { "select_and_accept", "snippet_forward", "fallback" },
     },
 
     appearance = {
@@ -47,6 +45,11 @@ return {
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
         documentation = { auto_show = true },
+        list = {
+            selection = {
+                auto_insert = false,
+            }
+        },
         menu = {
             auto_show = true,
             draw = {
@@ -65,10 +68,6 @@ return {
                 },
             },
         },
-        ghost_text = {
-            enabled = false,
-            show_with_menu = false
-        }
     },
 
     -- Default list of enabled providers defined so that you can extend it
