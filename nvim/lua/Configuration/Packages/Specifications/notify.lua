@@ -1,7 +1,7 @@
 return { 
     "rcarriga/nvim-notify",
     opts = {
-        render = "compact",
+        render = "minimal",
         background_colour = "#000000",
     }
 }

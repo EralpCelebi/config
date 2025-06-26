@@ -25,7 +25,18 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'super-tab' },
+    keymap = {
+        preset = 'none',
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+       
+        ['<Up>'] = { 'select_prev', 'fallback' },
+        ['<Down>'] = { 'select_next', 'fallback' },
+
+        ['<S-Tab>'] = { "snippet_forward", "fallback" },
+        
+        ['<Tab>'] = { "select_and_accept", "fallback" },
+    },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -34,12 +45,40 @@ return {
     },
 
     -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = false } },
+    completion = {
+        documentation = { auto_show = true },
+        menu = {
+            auto_show = true,
+            draw = {
+                -- We don't need label_description now because label and label_description are already
+                -- combined together in label by colorful-menu.nvim.
+                columns = { { "kind_icon" }, { "label", gap = 1 } },
+                components = {
+                    label = {
+                        text = function(ctx)
+                            return require("colorful-menu").blink_components_text(ctx)
+                        end,
+                        highlight = function(ctx)
+                            return require("colorful-menu").blink_components_highlight(ctx)
+                        end,
+                    },
+                },
+            },
+        },
+        ghost_text = {
+            enabled = false,
+            show_with_menu = false
+        }
+    },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+
+    signature = {
+        enabled = true
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

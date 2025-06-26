@@ -7,7 +7,7 @@ return {
             "Conditional", "Repeat", "Operator", "Structure", "LineNr", "NonText",
             "SignColumn", "CursorLine", "CursorLineNr", "StatusLine", "StatusLineNC",
             "EndOfBuffer", "TroubleNormal", "TroubleNormalNC", "TelescopeNormal",
-            "TelescopeBorder", "TelescopePromptBorder"
+            "TelescopeBorder", "TelescopePromptBorder", "NormalFloat", "FloatBorder"
         },
     },
 }

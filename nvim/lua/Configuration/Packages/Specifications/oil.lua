@@ -13,6 +13,9 @@ return {
             ["<C-H>"] = "actions.toggle_hidden",
         },
         use_default_keymaps = false,
+        win_options = {
+            signcolumn = "yes:2"
+        },
         view_options = {
             show_hidden = true,
         },
