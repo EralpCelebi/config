@@ -26,6 +26,8 @@ set(mode.NORMAL, '<leader>xx', function() vim.cmd("Trouble diagnostics toggle") 
 set(mode.NORMAL, '<leader>xb', function() vim.cmd("Trouble diagnostics toggle filter.buf=0") end, { desc = "Buffer diagnostics (trouble.nvim)" })
 set(mode.NORMAL, '<leader>F', function() vim.cmd("Format") end, { desc = "Format buffer. (conform.nvim)" })
 
+set(mode.NORMAL, '<leader>l', function() vim.cmd("LlamaToggle") end, { desc = "Toggle LLM. (llama.nvim)" })
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     set(mode.NORMAL, '<leader>de', telescope.lsp_type_definitions, { buffer = args.buf })

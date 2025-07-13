@@ -7,4 +7,7 @@ return {
             keymap_accept_line = "<C-Tab>"
         }
     end,
+    config = function() 
+        vim.cmd("LlamaDisable")
+    end
 }
