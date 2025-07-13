@@ -9,8 +9,10 @@ local mode = require('Configuration.Helpers.mode')
 local telescope = require('telescope.builtin')
 local format = require('conform').format
 
-set(mode.NORMAL, '<leader><leader>', function() vim.cmd("terminal") end, { desc = "Open terminal." })
-set(mode.TERMINAL, '<leader><Esc>', [[<C-\><C-d>]], { desc = "Escape terminal." })
+local terminal = require('Configuration.Helpers.terminal')
+
+set(mode.NORMAL, '<leader><leader>', terminal, { desc = "Open terminal." })
+set(mode.TERMINAL, '<leader><leader>', [[<C-\><C-d>]], { desc = "Escape terminal." })
 
 set(mode.NORMAL, '<leader>w', function() vim.cmd("Oil") end, { desc = "Open file tree. (Oil)" })
 set(mode.NORMAL, '<leader>ff', telescope.find_files, { desc =  "Find files. (telescope.nvim)"})
