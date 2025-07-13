@@ -8,7 +8,7 @@ local config = vim.lsp.config
 enable("rust_analyzer")
 enable("gopls")
 enable("clangd")
-
+enable("tinymist")
 --
 -- Configuration
 --
