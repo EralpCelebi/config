@@ -6,7 +6,7 @@ opt.relativenumber = true
 opt.wrap = false
 opt.termguicolors = true
 opt.showmode = false
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.cursorline = true
 opt.laststatus = 0
 
@@ -21,8 +21,8 @@ opt.smartindent = true
 -- Navigation.
 opt.splitright = true
 opt.splitbelow = true
-opt.mouse = 'a'
-opt.backspace = 'indent,eol,start'
+opt.mouse = "a"
+opt.backspace = "indent,eol,start"
 
 -- Searching.
 opt.ignorecase = true
@@ -34,13 +34,19 @@ opt.hlsearch = false
 opt.swapfile = false
 opt.backup = false
 opt.undofile = true
-opt.undodir = os.getenv('HOME') .. '/.local/share/nvim/undotree'
+opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/undotree"
 
 -- Wrapping.
 opt.textwidth = 80
-opt.formatoptions = 'c'
+opt.formatoptions = "c"
 
 -- Endings.
-opt.fileformat = 'unix'
-opt.fileformats = 'unix'
+opt.fileformat = "unix"
+opt.fileformats = "unix"
 opt.fixendofline = true
+
+-- Folding.
+opt.foldenable = false
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- opt.foldtext = "v:lua.vim.treesitter.foldtext()"
